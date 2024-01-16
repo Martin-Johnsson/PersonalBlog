@@ -2,7 +2,7 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Backend",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -22,7 +22,7 @@
     "styled-components": "5.3.3"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Martin Johnsson"
   },
   "strapi": {
     "uuid": "7a78747e-0556-4db5-8a0b-7b55658ea913"
