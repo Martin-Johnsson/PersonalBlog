@@ -1,4 +1,4 @@
-# Highscore
+# Personal blog
 
 An personal blog about all things surrounding development.
 
