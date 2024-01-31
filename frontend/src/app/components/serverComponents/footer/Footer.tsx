@@ -1,8 +1,10 @@
 'use server';
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className='border border-dotted border-b-white-700 border-t-0 border-r-0 h-20'>
-      <small>Copyright 2024</small>
+    <footer className='border border-dotted border-b-white-700 border-r-0 fixed bottom-0 w-full h-10'>
+      <small>&copy; Copyright {currentYear}</small>
     </footer>
   );
 };
