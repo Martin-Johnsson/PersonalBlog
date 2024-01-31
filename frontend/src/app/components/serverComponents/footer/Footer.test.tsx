@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { screen, render, waitFor } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import Footer from './Footer';
 
 describe('Footer', () => {
@@ -7,8 +7,9 @@ describe('Footer', () => {
     //Arrange
     render(<Footer />);
 
-    const footer = screen.getByText('Copyright 2024');
+    const currentYear = new Date().getFullYear();
 
+    const footer = screen.getByText(`© Copyright ${currentYear}`);
     // Act
 
     // Assert
