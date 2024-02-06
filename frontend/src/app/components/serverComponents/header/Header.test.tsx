@@ -3,7 +3,6 @@ import { screen, render, waitFor } from '@testing-library/react';
 import Header from './Header';
 import userEvent from '@testing-library/user-event';
 import About from '../about/About';
-import { createMocks } from 'node-mocks-http';
 
 describe('Header', () => {
   test('should render without errors', async () => {
@@ -50,9 +49,6 @@ describe('Header', () => {
     //Arrange
     render(<Header />);
     const aboutLink = screen.getByRole('link');
-    const { req, res } = createMocks({
-      method: 'GET',
-    });
 
     // Act
     await userEvent.click(aboutLink);
