@@ -1,6 +1,9 @@
 'use server';
-const Page = () => {
-  return <>About Page</>;
+
+import About from '../components/serverComponents/about/About';
+
+const page = () => {
+  return <About />;
 };
 
-export default Page;
+export default page;
