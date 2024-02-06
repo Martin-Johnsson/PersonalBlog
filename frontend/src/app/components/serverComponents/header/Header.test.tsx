@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { screen, render, waitFor } from '@testing-library/react';
 import Header from './Header';
 import userEvent from '@testing-library/user-event';
+import About from '../about/About';
 
 describe('Header', () => {
   test('should render without errors', async () => {
@@ -43,5 +44,16 @@ describe('Header', () => {
     await waitFor(() => {
       expect(searchField);
     });
+  });
+  test('should render redirect to /about when clicking on About Link', async () => {
+    //Arrange
+    render(<Header />);
+    const aboutLink = screen.getByRole('link');
+
+    // Act
+    await userEvent.click(aboutLink);
+    // Assert
+
+    expect(<About />);
   });
 });

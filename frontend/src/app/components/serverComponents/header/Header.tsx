@@ -2,6 +2,7 @@
 
 import React from 'react';
 import SearchButton from '../../clientComponents/SearchButton';
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
       <nav className='flex flex-row w-100 h-5 gap-5'>
         <SearchButton />
         <h1>Personal Blog</h1>
+        <Link href='/about'>About</Link>
       </nav>
     </header>
   );
