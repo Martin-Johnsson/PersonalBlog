@@ -16,4 +16,19 @@ describe('About', () => {
 
     expect(AboutHeading).toBeInTheDocument();
   });
+
+  test('should render paragraph element', async () => {
+    //Arrange
+    render(<About />);
+
+    const paragraph = screen.getByText(
+      'An personal blog about all things surrounding development.'
+    );
+
+    // Act
+
+    // Assert
+
+    expect(paragraph).toBeInTheDocument();
+  });
 });
