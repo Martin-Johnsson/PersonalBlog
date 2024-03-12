@@ -2,18 +2,19 @@
 
 import PostList from './components/serverComponents/post/PostList';
 
-// const { data } = useQuery(BLOG_POSTS);
-
 export default async function Page() {
-  const fetchPostDataResponse = await fetch(
-    'http://localhost:1337/api/blog-posts'
+  const fetchPosts = await fetch('http://localhost:1337/api/blog-postss').then(
+    (response: Response) => {
+      if (!response.ok) {
+        throw new Error(`Error fetching posts (Status: ${response.status})`);
+      } else return response.json();
+    }
   );
-  const postData = await fetchPostDataResponse.json();
 
   return (
     <div>
       <h1>
-        <PostList data={postData}></PostList>
+        <PostList data={fetchPosts}></PostList>
       </h1>
     </div>
   );
