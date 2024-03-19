@@ -1,15 +1,18 @@
 'use client';
 
-const PostList = (data) => {
-  const postData = data.data.data;
+import { Post, PostsResponse } from '../../../types/types';
+
+const PostList = (postsResponse: PostsResponse) => {
+  const posts: Post[] = postsResponse.data.data;
+  console.log(postsResponse);
 
   return (
     <section>
-      {postData.map((post) => (
-        <div key={post.id}>
+      {posts.map((post: Post) => (
+        <article key={post.id}>
           <h2>{post.attributes.title}</h2>
-          <h2>{post.attributes.body}</h2>
-        </div>
+          <p>{post.attributes.body}</p>
+        </article>
       ))}
     </section>
   );
